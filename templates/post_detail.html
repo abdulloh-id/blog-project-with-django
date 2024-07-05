@@ -4,6 +4,9 @@
 	<div class="post-entry">
 		<h2>{{ post.title }}</h2>
 		<h3>{{ post.author | title }}</h3>
+		<h4>{{ post.summary }}</h4>
 		<p>{{ post.body }}</p>
 	</div>
+<p><a href="{% url 'post_edit' post.pk %}">Postni tahrirlash</a></p>
+<p><a href="{% url 'post_delete' post.pk %}">Postni o'chirish</a></p>
 {% endblock content %}

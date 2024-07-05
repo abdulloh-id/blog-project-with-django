@@ -8,6 +8,7 @@ class Post(models.Model):
 		'auth.User',
 		on_delete=models.CASCADE
 	)
+	summary = models.CharField(max_length=400, null=True, blank=True, default="")
 	body = models.TextField()
 
 	def __str__(self):

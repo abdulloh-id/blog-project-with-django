@@ -42,4 +42,11 @@ class BlogTests(TestCase):
 		self.assertContains(response, 'Yangi post')
 		self.assertTemplateUsed(response, 'post_detail.html')
 
+		
+
+
+
+
+
+
 
