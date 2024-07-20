@@ -11,9 +11,21 @@
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+
 	<header>
 		<h1><a href="{% url 'home' %}">Bosh sahifa</a></h1>
 	</header>
+
+	{% if user.is_authenticated %}
+		<p>Xush kelibsiz, {{ user.username }}!</p>
+		<form method="post" action="{% url 'logout' %}">{% csrf_token %}
+	    <button type="submit">Chiqib ketish</button>
+	</form>
+
+	{% else %}
+		<p><a href="{% url 'login' %}">Saytga kirish</a></p>
+	{% endif %}
+	
 	<main>
 		<div>
 			{% block content %}
@@ -21,6 +33,7 @@
 			{% endblock %}
 		</div>
 	</main>
+	
 	<footer>
 		<h2><a href="{% url 'post_new' %}">Yangi post yozish</a></h2>
 		<hr>
