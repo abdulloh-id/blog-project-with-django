@@ -1,0 +1,26 @@
+header {
+	border-bottom: 1px solid #999;
+	margin-bottom: 1rem;
+	display: flex;
+}
+
+body {
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+header h1 a {
+	color: forestgreen;
+	text-decoration: none;
+}
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.noto-sans-<uniquifier> {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
